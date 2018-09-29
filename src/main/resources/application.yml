@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/backendninja?useSSL=false
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+#      naming:
+#        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
