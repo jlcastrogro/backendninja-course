@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.udemy.constants.ViewConstant;
 import com.udemy.model.ContactModel;
@@ -25,13 +26,16 @@ public class ContactController {
 	private ContactService contactService;
 	
 	@GetMapping("")
-	public String showContact() {
-		return ViewConstant.CONTACTS;
+	public ModelAndView showContacts() {
+		ModelAndView mav = new ModelAndView(ViewConstant.CONTACTS);
+		mav.addObject("contacts", contactService.listAllContact());
+		return mav;
+		
 	}
 
 	@GetMapping("/cancel")
 	public String cancel() {
-		return ViewConstant.CONTACTS;
+		return "redirect:/contact";
 	}
 
 	@GetMapping("/form")
@@ -50,6 +54,6 @@ public class ContactController {
 			model.addAttribute("result", 0);
 		}
 		
-		return ViewConstant.CONTACTS;
+		return "redirect:/contact";
 	}
 }

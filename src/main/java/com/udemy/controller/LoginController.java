@@ -39,7 +39,7 @@ public class LoginController {
 		LOGGER.info("Method: 'loginCheck()' -- Params: '" + userCredential + "'");
 		if (userCredential.getPassword().equals("user") && userCredential.getPassword().equals("user")) {
 			LOGGER.info("Returning contacts view");
-			return ViewConstant.CONTACTS;
+			return "redirect:/contact";
 		} else {
 			LOGGER.info("Redirecting to login view with errors");
 			return "redirect:/login?error";
