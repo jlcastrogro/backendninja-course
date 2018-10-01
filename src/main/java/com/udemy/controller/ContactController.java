@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.udemy.constants.ViewConstant;
+import com.udemy.entity.Contact;
 import com.udemy.model.ContactModel;
 import com.udemy.service.ContactService;
 
@@ -51,8 +52,14 @@ public class ContactController {
 	}
 
 	@GetMapping("/form")
-	public String redirectToContactForm(Model model) {
-		model.addAttribute("contact", new ContactModel());
+	public String redirectToContactForm(@RequestParam(name="id", required = false) Integer id, Model model) {
+		ContactModel contactModel = new ContactModel();
+		if (id != 0) {
+			contactModel = contactService.findContactByIdModel(id);
+			model.addAttribute("contact", contactModel);			
+		} else {
+			model.addAttribute("contact", new ContactModel());
+		}
 		return ViewConstant.CONTACT_FORM;
 	}
 
