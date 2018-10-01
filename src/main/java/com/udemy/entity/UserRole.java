@@ -1,7 +1,5 @@
 package com.udemy.entity;
 
-import static org.springframework.test.web.client.response.MockRestResponseCreators.withBadRequest;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
