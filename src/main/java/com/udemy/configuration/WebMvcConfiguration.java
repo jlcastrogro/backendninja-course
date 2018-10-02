@@ -9,11 +9,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import com.udemy.component.RequestTimeInterceptor;
 
 @Configuration
-public class WebMvcConfiguration implements WebMvcConfigurer{
+public class WebMvcConfiguration implements WebMvcConfigurer {
 	@Autowired
 	@Qualifier("requestTimeInterceptor")
 	private RequestTimeInterceptor requestTimeInterceptor;
-	
+
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(requestTimeInterceptor);
 	}

@@ -14,16 +14,16 @@ import com.udemy.repository.ContactRepository;
 import com.udemy.service.ContactService;
 
 @Service
-public class ContactServiceImpl implements ContactService{
-	
+public class ContactServiceImpl implements ContactService {
+
 	@Autowired
 	@Qualifier("contactRepository")
 	private ContactRepository contactRepository;
-	
+
 	@Autowired
 	@Qualifier("contactConverter")
 	private ContactConverter contactConverter;
-	
+
 	@Override
 	public ContactModel addContact(ContactModel contactModel) {
 		Contact contact = contactRepository.save(contactConverter.contactModel2Contact(contactModel));
@@ -44,12 +44,12 @@ public class ContactServiceImpl implements ContactService{
 	public Contact findContactById(int id) {
 		return contactRepository.findById(id);
 	}
-	
+
 	@Override
 	public ContactModel findContactByIdModel(int id) {
 		return contactConverter.contact2ContactModel(findContactById(id));
 	}
-	
+
 	@Override
 	public void removeContact(int id) {
 		Contact contact = contactRepository.findById(id);
@@ -57,5 +57,5 @@ public class ContactServiceImpl implements ContactService{
 			contactRepository.delete(contact);
 		}
 	}
-	
+
 }

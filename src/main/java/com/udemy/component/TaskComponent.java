@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component("taskComponent")
 public class TaskComponent {
 	private static final Log LOGGER = LogFactory.getLog(TaskComponent.class);
-	
+
 	@Scheduled(fixedDelay = 5000)
 	public void doTask() {
 		LOGGER.info("TIME IS: " + new Date());

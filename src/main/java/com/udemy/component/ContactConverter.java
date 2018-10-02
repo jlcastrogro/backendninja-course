@@ -14,7 +14,7 @@ public class ContactConverter {
 		contact.setLastname(contactModel.getLastname());
 		contact.setTelephone(contactModel.getTelephone());
 		contact.setCity(contactModel.getCity());
-		
+
 		return contact;
 	}
 
@@ -25,7 +25,7 @@ public class ContactConverter {
 		contactModel.setLastname(contact.getLastname());
 		contactModel.setTelephone(contact.getTelephone());
 		contactModel.setCity(contact.getCity());
-		
+
 		return contactModel;
 	}
 }

@@ -46,7 +46,7 @@ public class Contact {
 		this.telephone = telephone;
 		this.city = city;
 	}
-	
+
 	/**
 	 * @return the id
 	 */
@@ -117,7 +117,9 @@ public class Contact {
 		this.city = city;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -125,5 +127,5 @@ public class Contact {
 		return "Contact [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", telephone=" + telephone
 				+ ", city=" + city + "]";
 	}
-	
+
 }

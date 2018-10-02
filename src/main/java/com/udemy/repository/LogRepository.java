@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.udemy.entity.Log;
 
 @Repository("logRepository")
-public interface LogRepository extends JpaRepository<Log, Serializable>{
+public interface LogRepository extends JpaRepository<Log, Serializable> {
 
 }

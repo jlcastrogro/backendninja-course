@@ -54,11 +54,11 @@ public class ContactController {
 
 	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/form")
-	public String redirectToContactForm(@RequestParam(name="id", required = false) Integer id, Model model) {
+	public String redirectToContactForm(@RequestParam(name = "id", required = false) Integer id, Model model) {
 		ContactModel contactModel = new ContactModel();
 		if (id != 0) {
 			contactModel = contactService.findContactByIdModel(id);
-			model.addAttribute("contact", contactModel);			
+			model.addAttribute("contact", contactModel);
 		} else {
 			model.addAttribute("contact", new ContactModel());
 		}
@@ -71,7 +71,7 @@ public class ContactController {
 	}
 
 	@GetMapping("/remove")
-	public ModelAndView removeContact(@RequestParam(name="id", required = true) int id) {
+	public ModelAndView removeContact(@RequestParam(name = "id", required = true) int id) {
 		contactService.removeContact(id);
 		return showContacts();
 	}

@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.udemy.entity.User;
 
 @Repository("userRepository")
-public interface UserRepository extends JpaRepository<User, Serializable>{
+public interface UserRepository extends JpaRepository<User, Serializable> {
 	public abstract User findByUsername(String username);
 }

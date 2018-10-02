@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.udemy.entity.Contact;
 
 @Repository
-public interface ContactRepository extends JpaRepository<Contact, Serializable>{
+public interface ContactRepository extends JpaRepository<Contact, Serializable> {
 	public abstract Contact findById(int id);
 }
