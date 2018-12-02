@@ -52,7 +52,7 @@ public class User {
 	 * @param enabled
 	 * @param userRole
 	 */
-	public User(int id, String username, String password, boolean enabled, Set<UserRole> userRole) {
+	public User(String username, String password, boolean enabled, Set<UserRole> userRole) {
 		super();
 		this.username = username;
 		this.password = password;
